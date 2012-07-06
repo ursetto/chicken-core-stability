@@ -231,7 +231,8 @@
 	  ((let)
 	   (let ([var (first params)])
 	     (cond [(or (test var 'removable)
-			(and (test var 'contractable) (not (test var 'replacing))) )
+			(and (test var 'contractable) 
+			     (not (test var 'replacing))))
 		    (touch)
 		    (set! removed-lets (add1 removed-lets))
 		    (walk (second subs) fids) ]
@@ -282,7 +283,10 @@
 				  (or (test var 'value)
 				      (test var 'local-value)))]
 		       [args (cdr subs)] )
-		  (cond ((test var 'contractable)
+		  (cond ((and (test var 'contractable)
+			      (not (test var 'replacing))
+			      ;; inlinable procedure has changed
+			      (not (test (first (node-parameters lval)) 'inline-target)))
 			 (let* ([lparams (node-parameters lval)]
 				[llist (third lparams)] )
 			   (check-signature var args llist)
