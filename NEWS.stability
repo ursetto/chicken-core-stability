@@ -89,3 +89,9 @@ a77ae51 Fix finalizer size check: if it's bigger, we're already using one slot b
 186b26b Avoid using / in xsubstring and string-xcopy!, since srfi-13 is compiled with (declare (fixnum))
 2b4c7d6 Add tests for SRFI-13 (adapted from Gauche) and update LICENSE
 f0bf7d0 Add tests/srfi-13-tests.scm to manifest
+
+-------------------
+
+Changes in HEAD:
+
+20f39f8 Defer contraction pass for variables that are copy-propagated (#874)

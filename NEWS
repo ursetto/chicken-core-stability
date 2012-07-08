@@ -1,3 +1,10 @@
+4.7.0.7 (in progress)
+
+- Compiler
+  - Defer contraction pass for variables that are copy-propagated,
+    preventing an infinite loop when compiling, for example, the
+    SRFI 14 test suite.  Fixes #874.
+
 4.7.0.6
 
 The stability (-st) branch is now the official branch for point
