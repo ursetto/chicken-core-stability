@@ -95,3 +95,4 @@ f0bf7d0 Add tests/srfi-13-tests.scm to manifest
 Changes in HEAD:
 
 20f39f8 Defer contraction pass for variables that are copy-propagated (#874)
+633dcca Add tests for SRFI-14

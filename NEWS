@@ -4,6 +4,8 @@
   - Defer contraction pass for variables that are copy-propagated,
     preventing an infinite loop when compiling, for example, the
     SRFI 14 test suite.  Fixes #874.
+- Core libraries
+  - Added test suite for SRFI 14.
 
 4.7.0.6
 
