@@ -144,3 +144,13 @@
   (do ([i 0 (fx+ i 1)])
       [(fx= i stress-size)]
     (assert (fx= i (hash-table-ref ht i))) ) )
+
+(print "HT - copy")
+(define l '((1 a) (2 b) (3 c)))
+(set! ht (alist->hash-table l))
+(define ht2 (hash-table-copy ht))
+(assert (= (hash-table-size ht2) (hash-table-size ht)))
+(print l " -- " (hash-table->alist ht2))
+(assert (equal? l (sort (hash-table->alist ht2)
+                        (lambda (e1 e2) (< (car e1) (car e2))))))
+
