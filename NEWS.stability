@@ -96,3 +96,4 @@ Changes in HEAD:
 
 20f39f8 Defer contraction pass for variables that are copy-propagated (#874)
 633dcca Add tests for SRFI-14
+bb49295 Set hash-table size to number of entries in hash-table-copy

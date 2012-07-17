@@ -6,6 +6,8 @@
     SRFI 14 test suite.  Fixes #874.
 - Core libraries
   - Added test suite for SRFI 14.
+  - Ensure reported size of new hash table reflects the actual number 
+    of entries after a hash-table-copy.  Formerly it reported 0.
 
 4.7.0.6
 
